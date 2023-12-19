@@ -10,16 +10,25 @@
                 <h1 class="gallery-title">Current Series</h1>
                 <div class="grid-wrapper">
                     @foreach ($comics as $comic)
-                        <a href="{{ route('comics.show', $comic) }}">
-                            <div class="grid-item">
-                                <div class="item-img">
-                                    <img class="comic-thumb" src="{{ $comic['thumb'] }}" alt="">
-                                </div>
-                                <div class="item-title">
-                                    <p>{{ $comic['title'] }}</p>
+                        <div class="grid-item h-100 rounded rounded-3 overflow-hidden shadow">
+                            <div class="item-img">
+                                <img class="comic-thumb" src="{{ $comic['thumb'] }}" alt="">
+                                <div class="item-controls d-flex gap-2 p-2 justify-content-center align-items-end">
+                                    <a class="flex-grow-1" href="{{ route('comics.show', $comic) }}">
+                                        <button class="btn btn-sm btn-primary w-100">Details</button>
+                                    </a>
+                                    <a href="{{ route('comics.edit', $comic) }}">
+                                        <button class="btn btn-sm btn-success">Edit</button>
+                                    </a>
+                                    <a href="">
+                                        <button class="btn btn-sm btn-danger">Destroy!</button>
+                                    </a>
                                 </div>
                             </div>
-                        </a>
+                            <div class="item-title p-3">
+                                <p>{{ $comic['title'] }}</p>
+                            </div>
+                        </div>
                     @endforeach
                 </div>
                 <a href="{{ route('comics.create') }}">

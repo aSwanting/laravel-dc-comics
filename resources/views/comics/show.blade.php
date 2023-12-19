@@ -43,7 +43,7 @@
             </div>
         </div>
         <a href="{{ route('comics') }}">
-            <button class="comics-btn">Back to Comics</button>
+            <button class="comics-btn mb-3">Back to Comics</button>
         </a>
         <div class="specs">
             <div class="container">

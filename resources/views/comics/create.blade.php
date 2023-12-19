@@ -1,26 +1,26 @@
 @extends('layouts.app')
 
-@section('title', 'New Comic')
+@section('title', 'Add Comic')
 
 @section('content')
-    <div class="container">
+    <div class="container p-5">
 
-        <form action="{{ route('comics.store') }}" method="post">
+        <form action="{{ route('comics.store', $comic) }}" method="POST">
             @csrf
             <div class="mb-3">
                 <label for="title">Comic Title</label>
-                <input class="form-control" type="text" name="title" id="title" required>
+                <input class="form-control" type="text" name="title" id="title">
             </div>
             <div class="mb-3">
                 <label for="description">Comic Description</label>
-                <input class="form-control" type="text" name="description" id="description" required>
+                <textarea class="form-control" name="description" id="description" rows="2">Comic Description...</textarea>
             </div>
             <div class="mb-3">
                 <label for="thumb">Comic thumb</label>
                 <input class="form-control" type="text" name="thumb" id="thumb" required>
             </div>
             <div class="mb-3">
-                <label for="price">Comic price</label>
+                <label for="price">Comic price ($)</label>
                 <input class="form-control" type="number" name="price" id="price" required>
             </div>
             <div class="mb-3">

@@ -1,0 +1,82 @@
+header {
+    font-family: "Roboto Condensed", sans-serif;
+
+    .header-top {
+        font-size: 10px;
+        line-height: 20px;
+        background-color: $azure-radiance;
+        color: white;
+        text-transform: uppercase;
+        .top-nav {
+            display: flex;
+            justify-content: end;
+            gap: 30px;
+        }
+    }
+    .header-nav {
+        background-color: #fff;
+        color: $mine-shaft;
+        font-size: 14px;
+        font-weight: 700;
+
+        .header-logo {
+            width: 60px;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+
+            .nav-item span {
+                display: inline-block;
+                color: $azure-radiance;
+                transform: scale(1.5);
+            }
+
+            .nav-item a {
+                position: relative;
+                display: block;
+                text-transform: uppercase;
+                line-height: 50px;
+                padding: 20px 0;
+                white-space: nowrap;
+
+                &::after {
+                    content: "";
+                    display: none;
+                    position: absolute;
+                    inset: 96% 0 0 0;
+                    background-color: $azure-radiance;
+                }
+                &:hover,
+                &.active {
+                    color: $azure-radiance;
+                }
+                &.active {
+                    color: $azure-radiance;
+                    &::after {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .nav-search {
+            border-bottom: 2px solid $azure-radiance;
+            input {
+                width: 100px;
+                border: none;
+                background-color: transparent;
+                padding: 0 4px;
+                &:focus-visible {
+                    outline: none;
+                }
+
+                &::placeholder {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}

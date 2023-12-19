@@ -1,28 +1,140 @@
+@php
+    $id = $comic->id;
+    // $count = $total;
+    $title = $comic->title;
+    $description = $comic->description;
+    $thumb = $comic->thumb;
+    $price = $comic->price;
+    $series = $comic->series;
+    $sale_date = date_format(date_create($comic->sale_date), 'M d Y');
+    $type = $comic->type;
+@endphp
+
 @extends('layouts.app')
 
-@section('title', $comic->title)
+@section('title', $title)
 
 @section('content')
-    <div class="container">
-        <h1 class="text-center mb-5">{{ $comic->title }}</h1>
-        <div class="row mb-5 justify-content-center">
-
-            <div class="col-4">
-                <img class="img-fluid" src="{{ $comic->thumb }}">
+    <section class="comic-details">
+        <div class="comic-thumb">
+            <div class="container thumb-wrapper">
+                <img src="{{ $thumb }}" alt="">
             </div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center gap-5">
+                <div class="col comic-info">
+                    <h1 class="comic-title">{{ $title }}</h1>
+                    <div class="comic-availability">
+                        <div class="row align-items-center m-0">
+                            <div class="col flex-grow-1 price-info ">
+                                <span><span class="opacity-75">U.S. Price: </span> {{ $price }}</span>
+                                <span class="opacity-75">Available</span>
+                            </div>
+                            <div class="col-auto availability">Check Availability &blacktriangledown;</div>
+                        </div>
+                    </div>
+                    <p class="comic-description">{{ $description }}</p>
+                </div>
+                <div class="col-auto">
+                    <h4>Advertisement</h4>
+                    <img src="{{ Vite::asset('resources/img/adv.jpg') }}">
+                </div>
+            </div>
+        </div>
+        {{-- <div class="comic-nav text-center mb-3">
 
-            <div class="col-6">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><span class="fw-bold">Title: </span>{{ $comic->title }}</li>
-                    <li class="list-group-item"><span class="fw-bold">Description: </span>{{ $comic->description }}</li>
-                    <li class="list-group-item"><span class="fw-bold">Price: </span>${{ $comic->price }}</li>
-                    <li class="list-group-item"><span class="fw-bold">Series: </span>{{ $comic->series }}</li>
-                    <li class="list-group-item"><span class="fw-bold">Sale Date: </span>{{ $comic->sale_date }}</li>
-                    <li class="list-group-item"><span class="fw-bold">Type: </span>{{ $comic->type }}</li>
+            @if ($id > 0)
+                <a class="link-primary px-3" href="{{ URL::route('details', ['id' => $id - 1, 'total' => $count]) }}">
+                    Previous Comic
+                </a>
+            @endif
+
+            @if ($id < $count - 1)
+                <a class="link-primary px-3" href="{{ URL::route('details', ['id' => $id + 1, 'total' => $count]) }}">
+                    Next Comic
+                </a>
+            @endif
+
+        </div> --}}
+
+        <div class="specs">
+            <div class="container">
+                <div class="row gap-5">
+                    <div class="col">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td colspan="2">
+                                        <h3>Talent</h3>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Art by:</td>
+                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, fugit. </td>
+                                </tr>
+                                <tr>
+                                    <td>Written by:</td>
+                                    <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, fugit. </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <td colspan="2">
+                                        <h3>Specs</h3>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Series:</td>
+                                    <td><a class="series-link" href="#">{{ $series }}</a> </td>
+                                </tr>
+                                <tr>
+                                    <td>U.S Price:</td>
+                                    <td>{{ $price }} </td>
+                                </tr>
+                                <tr>
+                                    <td>On Sale Date:</td>
+                                    <td>{{ $sale_date }} </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="details-nav">
+            <div class="container">
+                <ul>
+                    <li>
+                        <a href="#">
+                            Digital Comics
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Shop DC
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Comic Shop Location
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            Subscription
+                        </a>
+                    </li>
                 </ul>
             </div>
-
         </div>
-        <a href="{{ route('comics.index') }}" class="d-block text-center">Back to Index</a>
-    </div>
+    </section>
 @endsection

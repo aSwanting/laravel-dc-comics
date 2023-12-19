@@ -1,0 +1,66 @@
+.footer-main {
+    font-family: "Roboto Condensed", sans-serif;
+    overflow: hidden;
+    background-color: $azure-radiance;
+    background-image: url(../img/footer-bg.jpg);
+    background-size: cover;
+    color: rgba(182, 182, 182);
+    font-size: 12px;
+    h3 {
+        color: white;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 700;
+        margin-bottom: 12px;
+    }
+    ul {
+        margin-bottom: 28px;
+    }
+
+    li {
+        margin-bottom: 4px;
+    }
+    .bg-logo-col {
+        position: relative;
+        .bg-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .legal-mumbojumbo {
+        a {
+            color: $azure-radiance;
+        }
+    }
+}
+.footer-social {
+    padding: 10px;
+    background-color: $mine-shaft;
+    text-transform: uppercase;
+    font-size: 14px;
+    .sign-up-btn {
+        text-transform: inherit;
+        background-color: transparent;
+        border: 2px solid $azure-radiance;
+        color: white;
+        padding: 0 20px;
+        line-height: 40px;
+    }
+    .socials {
+        h5 {
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        color: $azure-radiance;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 10px;
+
+        img {
+            width: 26px;
+        }
+    }
+}

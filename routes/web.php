@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/comics/characters', function () {
+    return view('comics.characters');
+})->name('comics.characters');
+
 // CRUD Comics
 
 Route::get('/comics', [ComicController::class, 'index'])

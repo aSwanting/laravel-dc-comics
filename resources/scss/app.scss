@@ -1,4 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./partials/variables";
+@import "./partials/reset";
+@import "./partials/general";
+@import "./partials/header";
+@import "./partials/hero";
 
-// template scss
-@import "partials/template";
+@import "./partials/comics";
+@import "./partials/comic_details";
+
+@import "./partials/footer";

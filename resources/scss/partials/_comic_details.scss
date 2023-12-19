@@ -65,6 +65,17 @@
         }
     }
 
+    .comics-btn {
+        display: block;
+        background-color: $azure-radiance;
+        color: white;
+        border: none;
+        line-height: 40px;
+        padding: 0 60px;
+        margin: 0 auto;
+        text-transform: uppercase;
+    }
+
     .details-nav {
         background-color: $wild-sand;
         color: rgb(116, 116, 116);

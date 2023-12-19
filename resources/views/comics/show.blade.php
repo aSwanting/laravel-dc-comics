@@ -42,22 +42,9 @@
                 </div>
             </div>
         </div>
-        {{-- <div class="comic-nav text-center mb-3">
-
-            @if ($id > 0)
-                <a class="link-primary px-3" href="{{ URL::route('details', ['id' => $id - 1, 'total' => $count]) }}">
-                    Previous Comic
-                </a>
-            @endif
-
-            @if ($id < $count - 1)
-                <a class="link-primary px-3" href="{{ URL::route('details', ['id' => $id + 1, 'total' => $count]) }}">
-                    Next Comic
-                </a>
-            @endif
-
-        </div> --}}
-
+        <a href="{{ route('comics') }}">
+            <button class="comics-btn">Back to Comics</button>
+        </a>
         <div class="specs">
             <div class="container">
                 <div class="row gap-5">

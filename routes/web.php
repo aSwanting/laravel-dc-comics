@@ -32,8 +32,8 @@ Route::post('/comics', [ComicController::class, 'store'])
 // ROUTES
 
 Route::get('/', function () {
-    return view('comics.characters');
-})->name('characters');
+    return view('comics.home');
+})->name('home');
 
 Route::get('/characters', function () {
     return view('comics.characters');

@@ -20,7 +20,7 @@
             <div class="row align-items-center flex-nowrap">
 
                 <div class="col-auto">
-                    <a href="#">
+                    <a href="{{ URL::route('home') }}">
                         <img class="header-logo" src="{{ Vite::asset('resources/img/dc-logo.png') }}">
                     </a>
                 </div>

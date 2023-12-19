@@ -3,11 +3,30 @@ import "~resources/scss/app.scss";
 import * as bootstrap from "bootstrap";
 import.meta.glob(["../img/**"]);
 
-console.log("HELLO");
+const modal = document.getElementById("confirm-modal");
+const destroyBtn = document.getElementById("btn-destroy");
+const cancelBtn = document.getElementById("btn-cancel");
 
-const deletion = document.getElementById("deletion");
+modal.style.display = "none";
 
-deletion.addEventListener("click", (event) => {
-    if (!window.confirm("Are you sure you want to delete this comic?"))
-        event.preventDefault();
+const deletionForm = document.querySelectorAll("#deletionForm");
+const deletionBtn = document.querySelectorAll("#deletion");
+let currentForm;
+
+deletionBtn.forEach((element, id) => {
+    element.addEventListener("click", (e) => {
+        e.preventDefault();
+        currentForm = id;
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden";
+    });
+});
+
+destroyBtn.addEventListener("click", (e) => {
+    deletionForm[currentForm].submit();
+});
+
+cancelBtn.addEventListener("click", (e) => {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
 });

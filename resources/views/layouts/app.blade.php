@@ -19,6 +19,7 @@
         @yield('content')
     </main>
     @include('partials.footer')
+    @include('partials.confirm_box')
 </body>
 
 </html>

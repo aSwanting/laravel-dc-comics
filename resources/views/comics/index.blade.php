@@ -21,7 +21,8 @@
                                         <button class="btn btn-sm btn-success">Edit</button>
                                     </a>
                                     <a href="{{ route('comics.destroy', $comic) }}">
-                                        <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+                                        <form action="{{ route('comics.destroy', $comic) }}" method="POST"
+                                            id="deletionForm">
                                             @csrf
                                             @method('DELETE')
                                             <input class="btn btn-sm btn-danger" id="deletion" type="submit"

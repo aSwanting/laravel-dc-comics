@@ -20,8 +20,12 @@
                                     <a href="{{ route('comics.edit', $comic) }}">
                                         <button class="btn btn-sm btn-success">Edit</button>
                                     </a>
-                                    <a href="">
-                                        <button class="btn btn-sm btn-danger">Destroy!</button>
+                                    <a href="{{ route('comics.destroy', $comic) }}">
+                                        <form action="{{ route('comics.destroy', $comic) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <input class="btn btn-sm btn-danger" type="submit" value="Destroy!">
+                                        </form>
                                     </a>
                                 </div>
                             </div>

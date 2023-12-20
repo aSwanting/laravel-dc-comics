@@ -26,7 +26,7 @@
                                             @csrf
                                             @method('DELETE')
                                             <input class="btn btn-sm btn-danger" id="deletion" type="submit"
-                                                value="Destroy!">
+                                                value="Destroy!" name="{{ $comic['title'] }}">
                                         </form>
                                     </a>
                                 </div>

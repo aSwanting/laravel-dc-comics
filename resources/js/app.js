@@ -6,6 +6,7 @@ import.meta.glob(["../img/**"]);
 const modal = document.getElementById("confirm-modal");
 const destroyBtn = document.getElementById("btn-destroy");
 const cancelBtn = document.getElementById("btn-cancel");
+const comicName = document.getElementById("comic-name");
 
 modal.style.display = "none";
 
@@ -19,6 +20,7 @@ deletionBtn.forEach((element, id) => {
         currentForm = id;
         modal.style.display = "flex";
         document.body.style.overflow = "hidden";
+        comicName.innerHTML = element.name;
     });
 });
 

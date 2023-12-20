@@ -41,41 +41,41 @@ Route::delete('comics/{comic}', [ComicController::class, 'destroy'])
 // ROUTES
 
 Route::get('/', function () {
-    return view('comics.home');
+    return view('home');
 })->name('home');
 
 Route::get('/characters', function () {
-    return view('comics.characters');
+    return view('characters');
 })->name('characters');
 
 Route::get('/movies', function () {
-    return view('comics.movies');
+    return view('movies');
 })->name('movies');
 
 Route::get('/tv', function () {
-    return view('comics.tv');
+    return view('tv');
 })->name('tv');
 
 Route::get('/games', function () {
-    return view('comics.games');
+    return view('games');
 })->name('games');
 
 Route::get('/collectibles', function () {
-    return view('comics.collectibles');
+    return view('collectibles');
 })->name('collectibles');
 
 Route::get('/videos', function () {
-    return view('comics.videos');
+    return view('videos');
 })->name('videos');
 
 Route::get('/fans', function () {
-    return view('comics.fans');
+    return view('fans');
 })->name('fans');
 
 Route::get('/news', function () {
-    return view('comics.news');
+    return view('news');
 })->name('news');
 
 Route::get('/shop', function () {
-    return view('comics.shop');
+    return view('shop');
 })->name('shop');
